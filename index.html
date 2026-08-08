@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VJApps provides software services including mobile app development, websites, web apps, custom software, and ongoing support.">
+<title>VJApps | Software Services</title>
+<style>
+:root{--bg:#f7f8fc;--text:#151a2d;--muted:#687086;--primary:#4f46e5;--dark:#0d1222;--line:#e6e8ef}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:850;letter-spacing:-1px}
+.logo span{color:var(--primary)}
+.links{display:flex;gap:28px;color:#596276;font-size:15px}
+.links a:hover{color:var(--primary)}
+.hero{padding:105px 0 95px;background:linear-gradient(135deg,#eef2ff,#fff 55%,#ecfeff)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:65px;align-items:center}
+.badge{display:inline-block;background:#e9e7ff;color:var(--primary);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:750;margin-bottom:20px}
+h1{font-size:clamp(44px,7vw,76px);line-height:1.02;letter-spacing:-4px;margin-bottom:22px}
+.hero p{font-size:19px;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:13px 21px;border-radius:12px;font-weight:750;border:1px solid #dfe3eb}
+.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+.primary:hover{background:#4338ca}
+.card-hero{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 25px 70px rgba(25,35,65,.11)}
+.big-icon{font-size:42px;margin-bottom:22px}
+.card-hero h2{font-size:27px;margin-bottom:9px}
+.card-hero p{font-size:15px}
+section{padding:85px 0}
+.title{text-align:center;margin-bottom:45px}
+.title h2{font-size:39px;letter-spacing:-1.5px;margin-bottom:8px}
+.title p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;transition:.2s}
+.service:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(20,30,60,.07)}
+.service-icon{font-size:30px;margin-bottom:16px}
+.service h3{font-size:20px;margin-bottom:8px}
+.service p{font-size:15px;color:var(--muted)}
+.dark{background:var(--dark);color:#fff}
+.dark .title p{color:#adb6c8}
+.about{max-width:800px;margin:auto;text-align:center;color:#d6dbe5;font-size:17px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{padding:25px;background:#fff;border:1px solid var(--line);border-radius:18px}
+.number{font-weight:800;color:var(--primary);font-size:14px;margin-bottom:8px}
+.step h3{font-size:18px;margin-bottom:7px}
+.step p{font-size:14px;color:var(--muted)}
+.contact-box{max-width:780px;margin:auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:25px;padding:50px 30px}
+.contact-box p{color:var(--muted);margin:10px 0 25px}
+footer{background:#080c18;color:#aeb6c5;text-align:center;padding:28px;font-size:14px}
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr}
+ .services{grid-template-columns:1fr 1fr}
+ .process{grid-template-columns:1fr 1fr}
+ .links{display:none}
+ h1{letter-spacing:-2.5px}
+}
+@media(max-width:560px){
+ .services,.process{grid-template-columns:1fr}
+ section{padding:65px 0}
+ .hero{padding:70px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="#home">VJ<span>Apps</span></a>
+<div class="links">
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<span class="badge">Software Services</span>
+<h1>Software that<br>moves ideas forward.</h1>
+<p>VJApps builds practical digital products for businesses and individuals — from mobile apps and websites to web apps and custom software.</p>
+<div class="actions">
+<a class="btn primary" href="#services">Our Services</a>
+<a class="btn" href="#contact">Start a Project</a>
+</div>
+</div>
+<div class="card-hero">
+<div class="big-icon">⚡</div>
+<h2>Build. Launch. Support.</h2>
+<p>We turn ideas into reliable, user-friendly software and provide ongoing support to keep digital products working and improving.</p>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="title">
+<h2>Our Software Services</h2>
+<p>End-to-end solutions for modern digital needs.</p>
+</div>
+<div class="services">
+<div class="service"><div class="service-icon">📱</div><h3>Mobile App Development</h3><p>Modern mobile applications with clean interfaces, useful features and reliable performance.</p></div>
+<div class="service"><div class="service-icon">🌐</div><h3>Website Development</h3><p>Fast, responsive and professional websites for businesses, products, portfolios and services.</p></div>
+<div class="service"><div class="service-icon">💻</div><h3>Web App Development</h3><p>Interactive browser-based applications designed around real business and user requirements.</p></div>
+<div class="service"><div class="service-icon">🧩</div><h3>Custom Software</h3><p>Tailored software solutions built around your workflow, requirements and business goals.</p></div>
+<div class="service"><div class="service-icon">🎨</div><h3>UI & UX Design</h3><p>Simple, intuitive interfaces that make software easier and more enjoyable to use.</p></div>
+<div class="service"><div class="service-icon">🛠️</div><h3>Maintenance & Support</h3><p>Updates, improvements, troubleshooting and ongoing technical support for your software.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark" id="about">
+<div class="container">
+<div class="title"><h2>About VJApps</h2><p>Technology with a practical purpose.</p></div>
+<div class="about">VJApps provides software development services focused on useful, reliable and easy-to-use digital products. Whether you need a new application, a business website, a web platform or custom software, we aim to deliver solutions that are simple to use and built for real-world needs.</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="title"><h2>How We Work</h2><p>A straightforward process from idea to launch.</p></div>
+<div class="process">
+<div class="step"><div class="number">01</div><h3>Discuss</h3><p>Understand your idea, requirements and goals.</p></div>
+<div class="step"><div class="number">02</div><h3>Plan</h3><p>Define features, structure and the right technology.</p></div>
+<div class="step"><div class="number">03</div><h3>Build</h3><p>Develop, test and refine the software.</p></div>
+<div class="step"><div class="number">04</div><h3>Launch & Support</h3><p>Deploy your product and provide ongoing improvements.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact-box">
+<h2>Have a software idea?</h2>
+<p>Let's turn it into a digital product. Replace the email below with your real VJApps contact address.</p>
+<a class="btn primary" href="mailto:contact2jayu@gmail.com">Contact VJApps</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 VJApps. All rights reserved.</footer>
+</body>
+</html>
