@@ -1,154 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="VJApps provides software services including mobile app development, websites, web apps, custom software, and ongoing support.">
-<title>VJApps | Software Services</title>
-<style>
-:root{--bg:#f7f8fc;--text:#151a2d;--muted:#687086;--primary:#4f46e5;--dark:#0d1222;--line:#e6e8ef}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav{min-height:72px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:850;letter-spacing:-1px}
-.logo span{color:var(--primary)}
-.links{display:flex;gap:28px;color:#596276;font-size:15px}
-.links a:hover{color:var(--primary)}
-.hero{padding:105px 0 95px;background:linear-gradient(135deg,#eef2ff,#fff 55%,#ecfeff)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:65px;align-items:center}
-.badge{display:inline-block;background:#e9e7ff;color:var(--primary);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:750;margin-bottom:20px}
-h1{font-size:clamp(44px,7vw,76px);line-height:1.02;letter-spacing:-4px;margin-bottom:22px}
-.hero p{font-size:19px;color:var(--muted);max-width:650px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-block;padding:13px 21px;border-radius:12px;font-weight:750;border:1px solid #dfe3eb}
-.primary{background:var(--primary);border-color:var(--primary);color:#fff}
-.primary:hover{background:#4338ca}
-.card-hero{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 25px 70px rgba(25,35,65,.11)}
-.big-icon{font-size:42px;margin-bottom:22px}
-.card-hero h2{font-size:27px;margin-bottom:9px}
-.card-hero p{font-size:15px}
-section{padding:85px 0}
-.title{text-align:center;margin-bottom:45px}
-.title h2{font-size:39px;letter-spacing:-1.5px;margin-bottom:8px}
-.title p{color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;transition:.2s}
-.service:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(20,30,60,.07)}
-.service-icon{font-size:30px;margin-bottom:16px}
-.service h3{font-size:20px;margin-bottom:8px}
-.service p{font-size:15px;color:var(--muted)}
-.dark{background:var(--dark);color:#fff}
-.dark .title p{color:#adb6c8}
-.about{max-width:800px;margin:auto;text-align:center;color:#d6dbe5;font-size:17px}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.step{padding:25px;background:#fff;border:1px solid var(--line);border-radius:18px}
-.number{font-weight:800;color:var(--primary);font-size:14px;margin-bottom:8px}
-.step h3{font-size:18px;margin-bottom:7px}
-.step p{font-size:14px;color:var(--muted)}
-.contact-box{max-width:780px;margin:auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:25px;padding:50px 30px}
-.contact-box p{color:var(--muted);margin:10px 0 25px}
-footer{background:#080c18;color:#aeb6c5;text-align:center;padding:28px;font-size:14px}
-@media(max-width:850px){
- .hero-grid{grid-template-columns:1fr}
- .services{grid-template-columns:1fr 1fr}
- .process{grid-template-columns:1fr 1fr}
- .links{display:none}
- h1{letter-spacing:-2.5px}
-}
-@media(max-width:560px){
- .services,.process{grid-template-columns:1fr}
- section{padding:65px 0}
- .hero{padding:70px 0}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VJAPPS - Mobile App Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #f27405;
+      --primary-dark: #d86200;
+      --text-dark: #1b1e28;
+      --text-muted: #6a7181;
+      --bg-light: #ffffff;
+      --card-bg: #ffffff;
+      --card-border: #f0f2f5;
+      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text-dark);
+      background-color: #fbfbfd;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e5e7eb;
+      color: #4b5563;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0 100px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -150px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(242,116,5,0.12) 0%, rgba(255,255,255,0) 70%);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h2 {
+      font-size: 56px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h2 span {
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Phone Mockup */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-wrapper {
+      position: relative;
+      width: 300px;
+      height: 580px;
+      background: #ffffff;
+      border-radius: 46px;
+      border: 12px solid #1f242d;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      width: 130px;
+      height: 20px;
+      background: #1f242d;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    .phone-screen-content {
+      text-align: center;
+    }
+
+    .phone-screen-content .brand-img {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 12px;
+    }
+
+    .floating-badge {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 10px 20px rgba(242,116,5,0.3);
+    }
+
+    .badge-top-left { top: 15%; left: 8%; }
+    .badge-top-right { top: 18%; right: 5%; }
+    .badge-bottom-left { bottom: 18%; left: 10%; }
+    .badge-bottom-right { bottom: 20%; right: 8%; }
+
+    /* Services Section */
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tagline {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #fdf5ec;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin: 0 auto 20px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Apps Section */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      color: #fff;
+    }
+
+    .app-icon.edutots { background: linear-gradient(135deg, #38ef7d, #11998e); }
+    .app-icon.slate { background: linear-gradient(135deg, #434343, #000000); }
+    .app-icon.quotes { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
+    .app-icon.manager { background: linear-gradient(135deg, #2193b0, #6dd5ed); }
+
+    .app-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .app-category {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      color: #ffb800;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .play-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .play-badge i { font-size: 16px; }
+
+    /* CTA Section */
+    .cta-banner {
+      background: linear-gradient(90deg, #f27405 0%, #ff9738 100%);
+      border-radius: 28px;
+      padding: 60px 80px;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      box-shadow: 0 16px 40px rgba(242,116,5,0.25);
+    }
+
+    .cta-text h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-text p {
+      font-size: 17px;
+      opacity: 0.9;
+      margin-bottom: 28px;
+    }
+
+    .cta-banner .btn-white {
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .cta-banner .btn-white:hover {
+      background: #fdf5ec;
+    }
+
+    .cta-phone-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      padding: 80px 0 30px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    .footer-col h5 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--primary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      width: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fdf5ec;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #f0f2f5;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid, .apps-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid, .cta-banner { grid-template-columns: 1fr; }
+      .hero-text h2 { font-size: 38px; }
+      .hero-visual { display: none; }
+      .services-grid, .apps-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<div class="container">
-<nav>
-<a class="logo" href="#home">VJ<span>Apps</span></a>
-<div class="links">
-<a href="#services">Services</a>
-<a href="#process">Process</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</div>
-</header>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="brand">
+          <img src="vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
+          <div class="brand-text">
+            <h1>VJAPPS</h1>
+            <span>Mobile App Developer</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#apps">Our Apps</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
 
-<main>
-<section class="hero" id="home">
-<div class="container hero-grid">
-<div>
-<span class="badge">Software Services</span>
-<h1>Software that<br>moves ideas forward.</h1>
-<p>VJApps builds practical digital products for businesses and individuals — from mobile apps and websites to web apps and custom software.</p>
-<div class="actions">
-<a class="btn primary" href="#services">Our Services</a>
-<a class="btn" href="#contact">Start a Project</a>
-</div>
-</div>
-<div class="card-hero">
-<div class="big-icon">⚡</div>
-<h2>Build. Launch. Support.</h2>
-<p>We turn ideas into reliable, user-friendly software and provide ongoing support to keep digital products working and improving.</p>
-</div>
-</div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h2>We Build<br>Amazing<br><span>Mobile Apps</span></h2>
+          <p>VJAPPS is a mobile app development company focused on building high-quality, user-friendly and innovative apps for Android.</p>
+          <div class="hero-actions">
+            <a href="#apps" class="btn btn-primary"><i class="fa-brands fa-google-play"></i> Our Apps on Play Store</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
 
-<section id="services">
-<div class="container">
-<div class="title">
-<h2>Our Software Services</h2>
-<p>End-to-end solutions for modern digital needs.</p>
-</div>
-<div class="services">
-<div class="service"><div class="service-icon">📱</div><h3>Mobile App Development</h3><p>Modern mobile applications with clean interfaces, useful features and reliable performance.</p></div>
-<div class="service"><div class="service-icon">🌐</div><h3>Website Development</h3><p>Fast, responsive and professional websites for businesses, products, portfolios and services.</p></div>
-<div class="service"><div class="service-icon">💻</div><h3>Web App Development</h3><p>Interactive browser-based applications designed around real business and user requirements.</p></div>
-<div class="service"><div class="service-icon">🧩</div><h3>Custom Software</h3><p>Tailored software solutions built around your workflow, requirements and business goals.</p></div>
-<div class="service"><div class="service-icon">🎨</div><h3>UI & UX Design</h3><p>Simple, intuitive interfaces that make software easier and more enjoyable to use.</p></div>
-<div class="service"><div class="service-icon">🛠️</div><h3>Maintenance & Support</h3><p>Updates, improvements, troubleshooting and ongoing technical support for your software.</p></div>
-</div>
-</div>
-</section>
+        <div class="hero-visual">
+          <div class="floating-badge badge-top-left"><i class="fa-solid fa-mobile-screen"></i></div>
+          <div class="floating-badge badge-top-right"><i class="fa-solid fa-code"></i></div>
+          <div class="floating-badge badge-bottom-left"><i class="fa-brands fa-android"></i></div>
+          <div class="floating-badge badge-bottom-right"><i class="fa-solid fa-rocket"></i></div>
 
-<section class="dark" id="about">
-<div class="container">
-<div class="title"><h2>About VJApps</h2><p>Technology with a practical purpose.</p></div>
-<div class="about">VJApps provides software development services focused on useful, reliable and easy-to-use digital products. Whether you need a new application, a business website, a web platform or custom software, we aim to deliver solutions that are simple to use and built for real-world needs.</div>
-</div>
-</section>
+          <div class="phone-wrapper">
+            <div class="phone-notch"></div>
+            <div class="phone-screen-content">
+              <img src="vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
+              <h3 style="color: var(--primary); letter-spacing: 1px;">VJAPPS</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="process">
-<div class="container">
-<div class="title"><h2>How We Work</h2><p>A straightforward process from idea to launch.</p></div>
-<div class="process">
-<div class="step"><div class="number">01</div><h3>Discuss</h3><p>Understand your idea, requirements and goals.</p></div>
-<div class="step"><div class="number">02</div><h3>Plan</h3><p>Define features, structure and the right technology.</p></div>
-<div class="step"><div class="number">03</div><h3>Build</h3><p>Develop, test and refine the software.</p></div>
-<div class="step"><div class="number">04</div><h3>Launch & Support</h3><p>Deploy your product and provide ongoing improvements.</p></div>
-</div>
-</div>
-</section>
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tagline">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+      </div>
 
-<section id="contact">
-<div class="container">
-<div class="contact-box">
-<h2>Have a software idea?</h2>
-<p>Let's turn it into a digital product. Replace the email below with your real VJApps contact address.</p>
-<a class="btn primary" href="mailto:contact2jayu@gmail.com">Contact VJApps</a>
-</div>
-</div>
-</section>
-</main>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Android App Development</h3>
+          <p>We build fast, secure, and scalable Android applications tailored to your needs.</p>
+        </div>
 
-<footer>© 2026 VJApps. All rights reserved.</footer>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Beautiful, modern and user-friendly designs that deliver great experiences.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <h3>App Publishing</h3>
+          <p>We help you publish your app on Google Play Store and grow your audience.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>Support & Maintenance</h3>
+          <p>We provide ongoing support and maintenance to keep your app up-to-date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Section -->
+  <section class="section" id="apps" style="background-color: #fff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tagline">Our Apps</span>
+        <h2 class="section-title">Apps on Google Play Store</h2>
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-icon edutots"><i class="fa-solid fa-shapes"></i></div>
+          <h4>EduTots</h4>
+          <span class="app-category">Kids Learning App</span>
+          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        </div>
+
+        <div class="app-card">
+          <div class="app-icon slate"><i class="fa-solid fa-chalkboard"></i></div>
+          <h4>Kids Slate</h4>
+          <span class="app-category">Draw & Learn</span>
+          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        </div>
+
+        <div class="app-card">
+          <div class="app-icon quotes"><i class="fa-solid fa-quote-right"></i></div>
+          <h4>Daily Quotes</h4>
+          <span class="app-category">Inspiration Daily</span>
+          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        </div>
+
+        <div class="app-card">
+          <div class="app-icon manager"><i class="fa-solid fa-trowel-bricks"></i></div>
+          <h4>Site Manager</h4>
+          <span class="app-category">Construction App</span>
+          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="#" class="btn btn-outline" style="border-radius: 12px; font-weight: 600;">View More Apps on Play Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-text">
+          <span style="text-transform: uppercase; font-size: 13px; font-weight: 700; opacity: 0.9;">Have an Idea?</span>
+          <h2>Let’s Build Something Great!</h2>
+          <p>We turn your ideas into powerful mobile apps. Contact us today and bring your vision to life.</p>
+          <a href="mailto:hello@vjapps.in" class="btn btn-white">Get In Touch</a>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <div class="phone-wrapper" style="width: 220px; height: 380px; border-width: 8px;">
+            <div class="phone-notch" style="width: 90px; height: 14px;"></div>
+            <img src="vjapps_logo.png" alt="VJAPPS Logo" class="cta-phone-icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand">
+            <img src="vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
+            <div class="brand-text">
+              <h1>VJAPPS</h1>
+              <span>Mobile App Developer</span>
+            </div>
+          </a>
+          <p>VJAPPS is a passionate mobile app development company creating innovative apps for Android users.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#apps">Our Apps</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Our Services</h5>
+          <ul>
+            <li><a href="#services">Android App Development</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">App Publishing</a></li>
+            <li><a href="#services">Support & Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact Us</h5>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98765 43210</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>hello@vjapps.in</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>India</span>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 VJAPPS. All Rights Reserved.</p>
+        <p>Made with &hearts; by VJAPPS</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
